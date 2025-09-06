@@ -468,34 +468,56 @@ async function submitBooking() {
 }
 
 async function submitToGoogleForms() {
-    // Google Forms submission
-    // You'll need to replace this URL with your actual Google Form action URL
-    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1DK9w2WDLfMKQwR54z98iiGKvrv0obeQosbYkNrP9cgI/formResponse';
+    console.log('🔄 Starting Google Form submission...');
+    console.log('📊 Booking data:', bookingData);
+    
+    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSeEI33WhgnIkzxmon5QjKAg1WmLR4nyhLzd1dpsX5nOPkQACA/formResponse';
     
     const formData = new FormData();
     
     // Map booking data to Google Form fields
     // Entry IDs extracted from your Google Form source code
-    formData.append('entry.2005620554', bookingData.serviceName); // Service Type
-    formData.append('entry.1045781291', formatDate(bookingData.date)); // Appointment Date  
-    formData.append('entry.1065046570', formatTime12Hour(bookingData.time)); // Appointment Time
-    formData.append('entry.1166974658', `${bookingData.duration} minutes`); // Duration
-    formData.append('entry.839337160', `₹${bookingData.price}`); // Consultation Fee
-    formData.append('entry.523327575', `${bookingData.customer.firstName} ${bookingData.customer.lastName}`); // Client Name
-    formData.append('entry.1996042048', bookingData.customer.email); // Client Email
-    formData.append('entry.45019109', bookingData.customer.phone); // Client Phone
-    formData.append('entry.1444915736', bookingData.customer.projectType || 'Not specified'); // Project Type
-    formData.append('entry.1330418491', bookingData.customer.budget || 'Not specified'); // Budget Range
-    formData.append('entry.1168732581', bookingData.customer.timeline || 'Not specified'); // Timeline  
-    formData.append('entry.1552771188', bookingData.customer.message || 'No additional message'); // Message
-    formData.append('entry.419421918', new Date().toISOString()); // Booking Timestamp
+    const dataToSubmit = {
+        'entry.2005620554': bookingData.serviceName,
+        'entry.1045781291': formatDate(bookingData.date),
+        'entry.1065046570': formatTime12Hour(bookingData.time),
+        'entry.1166974658': `${bookingData.duration} minutes`,
+        'entry.839337160': `₹${bookingData.price}`,
+        'entry.523327575': `${bookingData.customer.firstName} ${bookingData.customer.lastName}`,
+        'entry.1996042048': bookingData.customer.email,
+        'entry.45019109': bookingData.customer.phone,
+        'entry.1444915736': bookingData.customer.projectType || 'Not specified',
+        'entry.1330418491': bookingData.customer.budget || 'Not specified',
+        'entry.1168732581': bookingData.customer.timeline || 'Not specified',
+        'entry.1552771188': bookingData.customer.message || 'No additional message',
+        'entry.419421918': new Date().toISOString()
+    };
     
-    // Submit to Google Forms
-    return fetch(GOOGLE_FORM_URL, {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors' // Required for Google Forms
+    console.log('📝 Data being sent to form:', dataToSubmit);
+    
+    // Append all data to formData
+    Object.entries(dataToSubmit).forEach(([key, value]) => {
+        formData.append(key, value);
+        console.log(`✏️ ${key}: ${value}`);
     });
+    
+    try {
+        console.log('🚀 Submitting to:', GOOGLE_FORM_URL);
+        const response = await fetch(GOOGLE_FORM_URL, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors' // Required for Google Forms
+        });
+        
+        console.log('✅ Form submission response:', response);
+        console.log('📊 Response status:', response.status);
+        console.log('📊 Response type:', response.type);
+        
+        return response;
+    } catch (error) {
+        console.error('❌ Form submission error:', error);
+        throw error;
+    }
 }
 
 async function sendWhatsAppNotification() {
