@@ -453,12 +453,107 @@ async function confirmBooking() {
 }
 
 async function submitBooking() {
-    // Simulate API call
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            // Simulate 95% success rate
-            Math.random() > 0.05 ? resolve() : reject(new Error('Booking failed'));
-        }, 2000);
+    try {
+        // Submit to both Google Forms and WhatsApp
+        await Promise.all([
+            submitToGoogleForms(),
+            sendWhatsAppNotification()
+        ]);
+        
+        return Promise.resolve();
+    } catch (error) {
+        console.error('Booking submission failed:', error);
+        return Promise.reject(new Error('Booking submission failed. Please try again or contact us directly.'));
+    }
+}
+
+async function submitToGoogleForms() {
+    // Google Forms submission
+    // You'll need to replace this URL with your actual Google Form action URL
+    const GOOGLE_FORM_URL = 'YOUR_GOOGLE_FORM_URL_HERE';
+    
+    const formData = new FormData();
+    
+    // Map booking data to Google Form fields (you'll need to update field names)
+    formData.append('entry.SERVICE', bookingData.serviceName);
+    formData.append('entry.DATE', formatDate(bookingData.date));
+    formData.append('entry.TIME', formatTime12Hour(bookingData.time));
+    formData.append('entry.DURATION', `${bookingData.duration} minutes`);
+    formData.append('entry.PRICE', `₹${bookingData.price}`);
+    formData.append('entry.CLIENT_NAME', `${bookingData.customer.firstName} ${bookingData.customer.lastName}`);
+    formData.append('entry.CLIENT_EMAIL', bookingData.customer.email);
+    formData.append('entry.CLIENT_PHONE', bookingData.customer.phone);
+    formData.append('entry.PROJECT_TYPE', bookingData.customer.projectType || 'Not specified');
+    formData.append('entry.BUDGET', bookingData.customer.budget || 'Not specified');
+    formData.append('entry.TIMELINE', bookingData.customer.timeline || 'Not specified');
+    formData.append('entry.MESSAGE', bookingData.customer.message || 'No additional message');
+    formData.append('entry.BOOKING_TIME', new Date().toISOString());
+    
+    // Submit to Google Forms
+    return fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // Required for Google Forms
+    });
+}
+
+async function sendWhatsAppNotification() {
+    // Format booking details for WhatsApp message
+    const date = new Date(bookingData.date);
+    const whatsappMessage = formatWhatsAppMessage();
+    
+    // Your WhatsApp Business number
+    const whatsappNumber = '919913448866'; // +91 99 13 44 88 66
+    
+    // Create WhatsApp URL
+    const whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+    
+    // Open WhatsApp (this will work on mobile devices and WhatsApp Web)
+    window.open(whatsappURL, '_blank');
+    
+    return Promise.resolve();
+}
+
+function formatWhatsAppMessage() {
+    const date = new Date(bookingData.date);
+    const formattedDate = date.toLocaleDateString('en-IN', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
+    
+    return `🏗️ *NEW APPOINTMENT BOOKING*
+
+📅 *Service:* ${bookingData.serviceName}
+📅 *Date:* ${formattedDate}
+🕐 *Time:* ${formatTime12Hour(bookingData.time)}
+⏱️ *Duration:* ${bookingData.duration} minutes
+💰 *Consultation Fee:* ₹${bookingData.price}
+
+👤 *Client Details:*
+*Name:* ${bookingData.customer.firstName} ${bookingData.customer.lastName}
+📞 *Phone:* ${bookingData.customer.phone}
+📧 *Email:* ${bookingData.customer.email}
+
+🏡 *Project Details:*
+*Type:* ${bookingData.customer.projectType || 'Not specified'}
+*Budget:* ${bookingData.customer.budget || 'Not specified'}  
+*Timeline:* ${bookingData.customer.timeline || 'Not specified'}
+
+💬 *Message:* ${bookingData.customer.message || 'No additional message'}
+
+⏰ *Booked at:* ${new Date().toLocaleString('en-IN')}
+
+_Please confirm this appointment with the client._`;
+}
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-IN', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
     });
 }
 

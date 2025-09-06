@@ -741,3 +741,51 @@
         font-size: 2.5rem;
     }
 }
+
+/* Notification Info Styling */
+.notification-info {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.notification-info h4 {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.notification-info ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 0.95rem;
+}
+
+.notification-info ul li:last-child {
+    border-bottom: none;
+}
+
+.notification-info ul li span {
+    color: #495057;
+    line-height: 1.4;
+}
+
+/* Mobile responsive for notification info */
+@media (max-width: 768px) {
+    .notification-info {
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .notification-info h4 {
+        font-size: 1rem;
+    }
+    
+    .notification-info ul li {
+        font-size: 0.9rem;
+        padding: 0.75rem 0;
+    }
+}
