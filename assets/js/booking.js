@@ -475,21 +475,20 @@ async function submitToGoogleForms() {
     const formData = new FormData();
     
     // Map booking data to Google Form fields
-    // TODO: Replace these entry IDs with your actual form entry IDs
-    // Get them from your form's page source by searching for "entry."
-    formData.append('entry.1234567890', bookingData.serviceName); // Service Type
-    formData.append('entry.1234567891', formatDate(bookingData.date)); // Appointment Date  
-    formData.append('entry.1234567892', formatTime12Hour(bookingData.time)); // Appointment Time
-    formData.append('entry.1234567893', `${bookingData.duration} minutes`); // Duration
-    formData.append('entry.1234567894', `₹${bookingData.price}`); // Consultation Fee
-    formData.append('entry.1234567895', `${bookingData.customer.firstName} ${bookingData.customer.lastName}`); // Client Name
-    formData.append('entry.1234567896', bookingData.customer.email); // Client Email
-    formData.append('entry.1234567897', bookingData.customer.phone); // Client Phone
-    formData.append('entry.1234567898', bookingData.customer.projectType || 'Not specified'); // Project Type
-    formData.append('entry.1234567899', bookingData.customer.budget || 'Not specified'); // Budget Range
-    formData.append('entry.1234567900', bookingData.customer.timeline || 'Not specified'); // Timeline  
-    formData.append('entry.1234567901', bookingData.customer.message || 'No additional message'); // Message
-    formData.append('entry.1234567902', new Date().toISOString()); // Booking Timestamp
+    // Entry IDs extracted from your Google Form source code
+    formData.append('entry.2005620554', bookingData.serviceName); // Service Type
+    formData.append('entry.1045781291', formatDate(bookingData.date)); // Appointment Date  
+    formData.append('entry.1065046570', formatTime12Hour(bookingData.time)); // Appointment Time
+    formData.append('entry.1166974658', `${bookingData.duration} minutes`); // Duration
+    formData.append('entry.839337160', `₹${bookingData.price}`); // Consultation Fee
+    formData.append('entry.523327575', `${bookingData.customer.firstName} ${bookingData.customer.lastName}`); // Client Name
+    formData.append('entry.1996042048', bookingData.customer.email); // Client Email
+    formData.append('entry.45019109', bookingData.customer.phone); // Client Phone
+    formData.append('entry.1444915736', bookingData.customer.projectType || 'Not specified'); // Project Type
+    formData.append('entry.1330418491', bookingData.customer.budget || 'Not specified'); // Budget Range
+    formData.append('entry.1168732581', bookingData.customer.timeline || 'Not specified'); // Timeline  
+    formData.append('entry.1552771188', bookingData.customer.message || 'No additional message'); // Message
+    formData.append('entry.419421918', new Date().toISOString()); // Booking Timestamp
     
     // Submit to Google Forms
     return fetch(GOOGLE_FORM_URL, {
