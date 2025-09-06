@@ -36,9 +36,9 @@ const businessHours = {
 // Service configurations
 const serviceConfigs = {
     architecture: { name: 'Architecture Consultation', duration: 90, price: 200 },
-    interior: { name: 'Interior Design Consultation', duration: 60, price: 150 },
-    plotting: { name: 'Plot Planning Consultation', duration: 60, price: 175 },
-    general: { name: 'General Consultation', duration: 45, price: 100 }
+    interior: { name: 'Interior Design Consultation', duration: 60, price: 200 },
+    plotting: { name: 'Plot Planning Consultation', duration: 60, price: 200 },
+    general: { name: 'General Consultation', duration: 45, price: 200 }
 };
 
 // ===== INITIALIZATION =====
@@ -400,7 +400,7 @@ function displayBookingSummary() {
     // Service details
     document.getElementById('summaryService').textContent = bookingData.serviceName;
     document.getElementById('summaryDuration').textContent = `${bookingData.duration} minutes`;
-    document.getElementById('summaryPrice').textContent = `$${bookingData.price}`;
+    document.getElementById('summaryPrice').textContent = `₹${bookingData.price}`;
     
     // Appointment details
     const date = new Date(bookingData.date);
