@@ -191,19 +191,12 @@ ul, ol {
 .nav-logo {
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-family: var(--font-heading);
 }
 
 .nav-logo .logo-img {
-    height: 40px;
+    height: 50px;
     width: auto;
-    margin-right: 0.5rem;
-}
-
-.nav-logo .accent {
-    color: var(--accent-color);
+    max-width: 200px;
 }
 
 .nav-menu {
@@ -1051,20 +1044,14 @@ ul, ol {
 .footer-logo {
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-family: var(--font-heading);
     margin-bottom: 1rem;
 }
 
-.footer-logo .logo-img {
-    height: 40px;
+.footer-logo img {
+    height: 50px;
     width: auto;
-    margin-right: 0.5rem;
-}
-
-.footer-logo .accent {
-    color: var(--accent-color);
+    max-width: 200px;
+    filter: brightness(0) invert(1);
 }
 
 .footer-description {
@@ -1200,14 +1187,14 @@ ul, ol {
 }
 
 .loading-logo {
-    font-size: 2rem;
-    font-weight: 700;
-    font-family: var(--font-heading);
     margin-bottom: 2rem;
+    text-align: center;
 }
 
-.loading-logo .accent {
-    color: var(--accent-color);
+.loading-logo-img {
+    height: 80px;
+    width: auto;
+    max-width: 300px;
 }
 
 .loading-spinner {
