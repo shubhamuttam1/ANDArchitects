@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book an appointment with AND Architects. Schedule your consultation for architecture, interior design, and plotting services.">
+    <meta name="keywords" content="book appointment, architecture consultation, design meeting, schedule consultation">
+    <title>Book Appointment - AND Architects</title>
+    
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/booking.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.svg" alt="AND Architects" class="logo-img">
+                    <span class="logo-text">AND<span class="accent">Architects</span></span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="index.html#services" class="nav-link dropdown-toggle">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services/architecture.html">Architecture</a></li>
+                        <li><a href="services/interior-design.html">Interior Design</a></li>
+                        <li><a href="services/plotting.html">Plot Planning</a></li>
+                        <li><a href="services/consultation.html">Consultation</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="booking.html" class="nav-link cta-nav active">Book Appointment</a>
+                </li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content" data-aos="fade-up">
+                <h1 class="page-title">Book Your Consultation</h1>
+                <p class="page-subtitle">Schedule a meeting with our expert architects to discuss your project</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Book Appointment</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <!-- Service Selection -->
+                <div class="booking-step" id="step1">
+                    <div class="step-header" data-aos="fade-up">
+                        <div class="step-indicator">
+                            <span class="step-number">1</span>
+                            <span class="step-title">Choose Service</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-selection" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-cards">
+                            <div class="service-option" data-service="architecture" data-duration="90">
+                                <div class="service-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <h3>Architecture Consultation</h3>
+                                <p>Discuss your architectural project, site analysis, and design vision</p>
+                                <div class="service-details">
+                                    <span class="duration"><i class="fas fa-clock"></i> 90 minutes</span>
+                                    <span class="price">$200</span>
+                                </div>
+                            </div>
+                            
+                            <div class="service-option" data-service="interior" data-duration="60">
+                                <div class="service-icon">
+                                    <i class="fas fa-couch"></i>
+                                </div>
+                                <h3>Interior Design Consultation</h3>
+                                <p>Explore interior design concepts, space planning, and material selection</p>
+                                <div class="service-details">
+                                    <span class="duration"><i class="fas fa-clock"></i> 60 minutes</span>
+                                    <span class="price">$150</span>
+                                </div>
+                            </div>
+                            
+                            <div class="service-option" data-service="plotting" data-duration="60">
+                                <div class="service-icon">
+                                    <i class="fas fa-map"></i>
+                                </div>
+                                <h3>Plot Planning Consultation</h3>
+                                <p>Site analysis, zoning compliance, and development strategies</p>
+                                <div class="service-details">
+                                    <span class="duration"><i class="fas fa-clock"></i> 60 minutes</span>
+                                    <span class="price">$175</span>
+                                </div>
+                            </div>
+                            
+                            <div class="service-option" data-service="general" data-duration="45">
+                                <div class="service-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <h3>General Consultation</h3>
+                                <p>Initial project discussion and feasibility assessment</p>
+                                <div class="service-details">
+                                    <span class="duration"><i class="fas fa-clock"></i> 45 minutes</span>
+                                    <span class="price">$100</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-actions">
+                            <button class="btn btn-primary" id="nextStep1" disabled>Next: Select Date & Time</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calendar & Time Selection -->
+                <div class="booking-step" id="step2" style="display: none;">
+                    <div class="step-header" data-aos="fade-up">
+                        <div class="step-indicator">
+                            <span class="step-number">2</span>
+                            <span class="step-title">Select Date & Time</span>
+                        </div>
+                        <button class="step-back" id="backStep2">
+                            <i class="fas fa-arrow-left"></i> Back
+                        </button>
+                    </div>
+                    
+                    <div class="datetime-selection" data-aos="fade-up" data-aos-delay="100">
+                        <div class="calendar-container">
+                            <div class="calendar-header">
+                                <h3>Select Date</h3>
+                                <p class="selected-service-info">
+                                    Service: <span id="selectedServiceName">-</span> 
+                                    (<span id="selectedServiceDuration">-</span> minutes)
+                                </p>
+                            </div>
+                            <div id="calendar"></div>
+                        </div>
+                        
+                        <div class="time-slots-container">
+                            <div class="time-slots-header">
+                                <h3>Available Time Slots</h3>
+                                <p class="selected-date-info">
+                                    Date: <span id="selectedDateDisplay">Please select a date</span>
+                                </p>
+                            </div>
+                            <div class="time-slots" id="timeSlots">
+                                <p class="no-date-selected">Please select a date from the calendar</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-actions">
+                        <button class="btn btn-outline" id="backStep2Btn">Back</button>
+                        <button class="btn btn-primary" id="nextStep2" disabled>Next: Your Details</button>
+                    </div>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="booking-step" id="step3" style="display: none;">
+                    <div class="step-header" data-aos="fade-up">
+                        <div class="step-indicator">
+                            <span class="step-number">3</span>
+                            <span class="step-title">Your Information</span>
+                        </div>
+                        <button class="step-back" id="backStep3">
+                            <i class="fas fa-arrow-left"></i> Back
+                        </button>
+                    </div>
+                    
+                    <div class="booking-form" data-aos="fade-up" data-aos-delay="100">
+                        <form id="bookingForm" class="form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name*</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name*</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address*</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number*</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Company/Organization</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="projectType">Project Type</label>
+                                <select id="projectType" name="projectType">
+                                    <option value="">Select Project Type</option>
+                                    <option value="residential-new">New Residential Construction</option>
+                                    <option value="residential-renovation">Residential Renovation</option>
+                                    <option value="commercial-new">New Commercial Construction</option>
+                                    <option value="commercial-renovation">Commercial Renovation</option>
+                                    <option value="interior-residential">Residential Interior Design</option>
+                                    <option value="interior-commercial">Commercial Interior Design</option>
+                                    <option value="landscape">Landscape Design</option>
+                                    <option value="feasibility">Feasibility Study</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="budget">Project Budget Range</label>
+                                    <select id="budget" name="budget">
+                                        <option value="">Select Budget Range</option>
+                                        <option value="under-50k">Under $50,000</option>
+                                        <option value="50k-100k">$50,000 - $100,000</option>
+                                        <option value="100k-250k">$100,000 - $250,000</option>
+                                        <option value="250k-500k">$250,000 - $500,000</option>
+                                        <option value="500k-1m">$500,000 - $1,000,000</option>
+                                        <option value="over-1m">Over $1,000,000</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="timeline">Expected Timeline</label>
+                                    <select id="timeline" name="timeline">
+                                        <option value="">Select Timeline</option>
+                                        <option value="asap">ASAP</option>
+                                        <option value="1-3months">1-3 months</option>
+                                        <option value="3-6months">3-6 months</option>
+                                        <option value="6-12months">6-12 months</option>
+                                        <option value="over-1year">Over 1 year</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="projectDetails">Project Details</label>
+                                <textarea id="projectDetails" name="projectDetails" rows="4" 
+                                    placeholder="Please describe your project, including location, size, specific requirements, and any other relevant details..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="specialRequests">Special Requests or Questions</label>
+                                <textarea id="specialRequests" name="specialRequests" rows="3" 
+                                    placeholder="Any specific topics you'd like to discuss or special accommodations needed..."></textarea>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Subscribe to our newsletter for design tips and project updates
+                                </label>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <span class="checkmark"></span>
+                                    I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and 
+                                    <a href="privacy.html" target="_blank">Privacy Policy</a>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="step-actions">
+                        <button class="btn btn-outline" id="backStep3Btn">Back</button>
+                        <button class="btn btn-primary" id="nextStep3">Review Booking</button>
+                    </div>
+                </div>
+
+                <!-- Booking Confirmation -->
+                <div class="booking-step" id="step4" style="display: none;">
+                    <div class="step-header" data-aos="fade-up">
+                        <div class="step-indicator">
+                            <span class="step-number">4</span>
+                            <span class="step-title">Confirm Booking</span>
+                        </div>
+                        <button class="step-back" id="backStep4">
+                            <i class="fas fa-arrow-left"></i> Back
+                        </button>
+                    </div>
+                    
+                    <div class="booking-summary" data-aos="fade-up" data-aos-delay="100">
+                        <div class="summary-card">
+                            <h3>Booking Summary</h3>
+                            
+                            <div class="summary-section">
+                                <h4>Service Details</h4>
+                                <div class="summary-item">
+                                    <span class="label">Service:</span>
+                                    <span class="value" id="summaryService">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Duration:</span>
+                                    <span class="value" id="summaryDuration">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Consultation Fee:</span>
+                                    <span class="value price" id="summaryPrice">-</span>
+                                </div>
+                            </div>
+                            
+                            <div class="summary-section">
+                                <h4>Appointment Details</h4>
+                                <div class="summary-item">
+                                    <span class="label">Date:</span>
+                                    <span class="value" id="summaryDate">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Time:</span>
+                                    <span class="value" id="summaryTime">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Location:</span>
+                                    <span class="value">AND Architects Office<br>123 Architecture Street</span>
+                                </div>
+                            </div>
+                            
+                            <div class="summary-section">
+                                <h4>Contact Information</h4>
+                                <div class="summary-item">
+                                    <span class="label">Name:</span>
+                                    <span class="value" id="summaryName">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Email:</span>
+                                    <span class="value" id="summaryEmail">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Phone:</span>
+                                    <span class="value" id="summaryPhone">-</span>
+                                </div>
+                            </div>
+                            
+                            <div class="important-notes">
+                                <h4><i class="fas fa-info-circle"></i> Important Notes</h4>
+                                <ul>
+                                    <li>Please arrive 10 minutes before your scheduled appointment</li>
+                                    <li>Bring any relevant documents, photos, or sketches of your project</li>
+                                    <li>Free parking is available on-site</li>
+                                    <li>Consultation fee is credited toward your project if you proceed with our services</li>
+                                    <li>Cancellation or rescheduling requires at least 24 hours notice</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-actions">
+                        <button class="btn btn-outline" id="backStep4Btn">Back</button>
+                        <button class="btn btn-primary" id="confirmBooking">
+                            <i class="fas fa-check"></i> Confirm Booking
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Success Message -->
+                <div class="booking-step success-step" id="successStep" style="display: none;">
+                    <div class="success-content" data-aos="fade-up">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2>Booking Confirmed!</h2>
+                        <p>Thank you for choosing AND Architects. Your consultation has been successfully scheduled.</p>
+                        
+                        <div class="success-details">
+                            <div class="success-item">
+                                <i class="fas fa-calendar"></i>
+                                <span id="successDate">-</span>
+                            </div>
+                            <div class="success-item">
+                                <i class="fas fa-clock"></i>
+                                <span id="successTime">-</span>
+                            </div>
+                            <div class="success-item">
+                                <i class="fas fa-envelope"></i>
+                                Confirmation email sent
+                            </div>
+                        </div>
+                        
+                        <div class="success-actions">
+                            <a href="index.html" class="btn btn-primary">Return Home</a>
+                            <button class="btn btn-outline" onclick="window.print()">Print Details</button>
+                        </div>
+                        
+                        <div class="next-steps">
+                            <h4>What's Next?</h4>
+                            <ol>
+                                <li>Check your email for confirmation details</li>
+                                <li>Add the appointment to your calendar</li>
+                                <li>Prepare any project materials or questions</li>
+                                <li>We'll send a reminder 24 hours before your appointment</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-info-content" data-aos="fade-up">
+                <h3>Need Help with Your Booking?</h3>
+                <p>Our team is here to assist you with any questions or special requirements.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>bookings@andarchitects.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Office Hours</h4>
+                            <p>Mon-Fri: 9AM-6PM<br>Sat: 10AM-4PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-sections">
+                    <div class="footer-section">
+                        <div class="footer-logo">
+                            <img src="assets/images/logo-white.svg" alt="AND Architects">
+                            <span class="logo-text">AND<span class="accent">Architects</span></span>
+                        </div>
+                        <p class="footer-description">
+                            Creating exceptional architectural experiences through innovative design, 
+                            sustainable practices, and unwavering commitment to excellence.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4 class="footer-title">Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="services/architecture.html">Architecture Design</a></li>
+                            <li><a href="services/interior-design.html">Interior Design</a></li>
+                            <li><a href="services/plotting.html">Plot Planning</a></li>
+                            <li><a href="services/consultation.html">Design Consultation</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4 class="footer-title">Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4 class="footer-title">Contact Info</h4>
+                        <div class="footer-contact">
+                            <p><i class="fas fa-map-marker-alt"></i> 123 Architecture Street, Design District</p>
+                            <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                            <p><i class="fas fa-envelope"></i> info@andarchitects.com</p>
+                        </div>
+                        <a href="booking.html" class="btn btn-primary btn-small">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        &copy; 2024 AND Architects. All rights reserved.
+                    </p>
+                    <div class="footer-bottom-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="sitemap.html">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/booking.js"></script>
+</body>
+</html>
