@@ -1827,21 +1827,40 @@ ul, ol {
 
 /* ===== FOUNDER PROFILE SECTION =====
 .founder-section {
-    background: var(--white);
+    background: linear-gradient(135deg, var(--light-gray) 0%, rgba(248, 249, 250, 0.8) 50%, var(--white) 100%);
     padding: var(--section-padding);
+    position: relative;
+}
+
+.founder-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23e67e22" fill-opacity="0.03"><circle cx="6" cy="6" r="2"/><circle cx="30" cy="30" r="2"/><circle cx="54" cy="54" r="2"/></g></g></svg>');
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.founder-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .founder-profile {
     display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 4rem;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
     align-items: start;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    background: var(--light-gray);
+    background: var(--white);
     border-radius: var(--border-radius-xl);
-    padding: 3rem;
-    box-shadow: var(--shadow-xl);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--medium-gray);
 }
 
 .founder-image {
@@ -1864,7 +1883,7 @@ ul, ol {
 
 .image-wrapper img {
     width: 100%;
-    height: 500px;
+    height: 320px;
     object-fit: cover;
     transition: var(--transition-slow);
 }
@@ -2083,38 +2102,74 @@ ul, ol {
     font-size: 1rem;
 }
 
+.founder-contact {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    margin-top: 1.5rem;
+}
+
+.founder-contact h4 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
 .founder-contact .contact-methods {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
 .founder-contact .contact-method {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    text-align: center;
+    gap: 0.75rem;
     background: var(--white);
-    padding: 1rem 1.5rem;
+    padding: 1.5rem 1rem;
     border-radius: var(--border-radius-md);
-    transition: var(--transition-fast);
+    transition: var(--transition-normal);
     text-decoration: none;
     color: var(--text-dark);
     border: 2px solid transparent;
+    box-shadow: var(--shadow-sm);
 }
 
 .founder-contact .contact-method:hover {
     border-color: var(--accent-color);
     background: rgba(230, 126, 34, 0.05);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
 
 .founder-contact .contact-method i {
-    width: 20px;
-    color: var(--accent-color);
-    font-size: 1.125rem;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-accent);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
 }
 
-.founder-contact .contact-method span {
+.founder-contact .contact-method .contact-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+}
+
+.founder-contact .contact-method .contact-info {
     font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.4;
 }
 
 /* Responsive Design for Founder Section */
@@ -2165,6 +2220,15 @@ ul, ol {
     .founder-quote blockquote {
         font-size: 1rem;
         padding-left: 1.5rem;
+    }
+    
+    .founder-contact .contact-methods {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .founder-contact {
+        padding: 1.5rem;
     }
 }
 
