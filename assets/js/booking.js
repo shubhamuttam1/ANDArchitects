@@ -35,10 +35,10 @@ const businessHours = {
 
 // Service configurations
 const serviceConfigs = {
-    architecture: { name: 'Architecture Consultation', duration: 90, price: 200 },
-    interior: { name: 'Interior Design Consultation', duration: 60, price: 200 },
-    plotting: { name: 'Plot Planning Consultation', duration: 60, price: 200 },
-    general: { name: 'General Consultation', duration: 45, price: 200 }
+    architecture: { name: 'Architecture Consultation', duration: 30, price: 200 },
+    interior: { name: 'Interior Design Consultation', duration: 30, price: 200 },
+    plotting: { name: 'Plot Planning Consultation', duration: 30, price: 200 },
+    general: { name: 'General Consultation', duration: 30, price: 200 }
 };
 
 // ===== INITIALIZATION =====
