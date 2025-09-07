@@ -705,7 +705,6 @@
     .hamburger,
     .back-to-top,
     .loading-screen,
-    .hero-video,
     .scroll-indicator {
         display: none !important;
     }

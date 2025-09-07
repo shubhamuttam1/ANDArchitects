@@ -227,9 +227,6 @@ function initHeroEffects() {
     // Typing effect for hero title
     initTypingEffect();
     
-    // Video loading optimization
-    initVideoOptimization();
-    
     // Hero stats animation
     initStatsAnimation();
 }
