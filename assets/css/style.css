@@ -1,23 +1,23 @@
 /* ===== ROOT VARIABLES ===== */
 :root {
-    /* Color Palette */
-    --primary-color: #2c3e50;
-    --secondary-color: #34495e;
+    /* Dark Theme Color Palette */
+    --primary-color: #1a1a2e;
+    --secondary-color: #16213e;
     --accent-color: #e67e22;
     --accent-light: #f39c12;
-    --text-dark: #2c3e50;
-    --text-light: #7f8c8d;
-    --text-muted: #95a5a6;
-    --white: #ffffff;
-    --light-gray: #f8f9fa;
-    --medium-gray: #ecf0f1;
-    --dark-gray: #34495e;
-    --black: #000000;
+    --text-dark: #ffffff;
+    --text-light: #b0b3b8;
+    --text-muted: #8a8d93;
+    --white: #1e1e2e;
+    --light-gray: #242438;
+    --medium-gray: #2a2a40;
+    --dark-gray: #16213e;
+    --black: #0f0f1a;
     
-    /* Gradients */
+    /* Dark Theme Gradients */
     --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--accent-light));
-    --gradient-overlay: linear-gradient(rgba(44, 62, 80, 0.7), rgba(52, 73, 94, 0.8));
+    --gradient-overlay: linear-gradient(rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.9));
     
     /* Typography */
     --font-primary: 'Inter', sans-serif;
@@ -35,11 +35,11 @@
     --border-radius-lg: 16px;
     --border-radius-xl: 24px;
     
-    /* Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
-    --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.25);
+    /* Dark Theme Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.6);
     
     /* Transitions */
     --transition-fast: 0.2s ease;
@@ -73,7 +73,7 @@ body {
     font-size: 1rem;
     line-height: 1.7;
     color: var(--text-dark);
-    background-color: var(--white);
+    background-color: var(--black);
     overflow-x: hidden;
 }
 
@@ -174,7 +174,7 @@ ul, ol {
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(30, 30, 46, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-md);
 }
@@ -407,7 +407,7 @@ ul, ol {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(44, 62, 80, 0.75), rgba(52, 73, 94, 0.65));
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.75));
     z-index: -1;
 }
 
@@ -482,7 +482,7 @@ ul, ol {
 /* ===== ABOUT SECTION ===== */
 .about-section {
     padding: var(--section-padding);
-    background: linear-gradient(rgba(248, 249, 250, 0.92), rgba(248, 249, 250, 0.92)), 
+    background: linear-gradient(rgba(15, 15, 26, 0.92), rgba(26, 26, 46, 0.90)), 
                 url('../projects/contemporary garden design/about-bg.jpeg');
     background-size: cover;
     background-position: center;
@@ -568,7 +568,7 @@ ul, ol {
 /* ===== SERVICES SECTION ===== */
 .services-section {
     padding: var(--section-padding);
-    background: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)), 
+    background: linear-gradient(rgba(15, 15, 26, 0.93), rgba(26, 26, 46, 0.88)), 
                 url('../projects/3d_elevations/services-bg.jpeg');
     background-size: cover;
     background-position: center;
@@ -594,28 +594,28 @@ ul, ol {
 
 /* Service Card Background Images */
 .service-card:nth-child(1) {
-    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), 
+    background: linear-gradient(rgba(30, 30, 46, 0.90), rgba(26, 26, 46, 0.95)), 
                 url('../projects/3d_elevations/architecture-bg.jpeg');
     background-size: cover;
     background-position: center;
 }
 
 .service-card:nth-child(2) {
-    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), 
+    background: linear-gradient(rgba(30, 30, 46, 0.90), rgba(26, 26, 46, 0.95)), 
                 url('../projects/modern home interior design India/interior-bg.jpeg');
     background-size: cover;
     background-position: center;
 }
 
 .service-card:nth-child(3) {
-    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), 
+    background: linear-gradient(rgba(30, 30, 46, 0.90), rgba(26, 26, 46, 0.95)), 
                 url('../projects/modern house landscaping India/landscape-bg.jpeg');
     background-size: cover;
     background-position: center;
 }
 
 .service-card:nth-child(4) {
-    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), 
+    background: linear-gradient(rgba(30, 30, 46, 0.90), rgba(26, 26, 46, 0.95)), 
                 url('../projects/architect office workspace/office-bg.jpeg');
     background-size: cover;
     background-position: center;
@@ -711,7 +711,7 @@ ul, ol {
 /* ===== PORTFOLIO SECTION ===== */
 .portfolio-section {
     padding: var(--section-padding);
-    background: linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.9)), 
+    background: linear-gradient(rgba(15, 15, 26, 0.9), rgba(26, 26, 46, 0.85)), 
                 url('../projects/modern house landscaping India/portfolio-bg.jpeg');
     background-size: cover;
     background-position: center;
@@ -843,7 +843,7 @@ ul, ol {
 
 /* ===== INTERIOR GALLERY SECTION ===== */
 .interior-gallery-section {
-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+    background: linear-gradient(rgba(15, 15, 26, 0.9), rgba(26, 26, 46, 0.85)), 
                 url('../projects/contemporary Indian house interior/gallery-bg.jpeg');
     background-size: cover;
     background-position: center;
@@ -929,7 +929,7 @@ ul, ol {
 /* ===== PROCESS SECTION ===== */
 .process-section {
     padding: var(--section-padding);
-    background: linear-gradient(rgba(248, 249, 250, 0.95), rgba(248, 249, 250, 0.95)), 
+    background: linear-gradient(rgba(15, 15, 26, 0.95), rgba(26, 26, 46, 0.90)), 
                 url('../projects/architect office workspace/process-bg.jpeg');
     background-size: cover;
     background-position: center;
@@ -1003,7 +1003,7 @@ ul, ol {
 /* ===== CONTACT SECTION ===== */
 .contact-section {
     padding: var(--section-padding);
-    background: linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.9)), 
+    background: linear-gradient(rgba(15, 15, 26, 0.9), rgba(26, 26, 46, 0.85)), 
                 url('../projects/architect office workspace/contact-bg.jpeg');
     background-size: cover;
     background-position: center;
@@ -1844,7 +1844,7 @@ ul, ol {
 
 /* ===== FOUNDER PROFILE SECTION =====
 .founder-section {
-    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.95)), 
+    background: linear-gradient(rgba(15, 15, 26, 0.95), rgba(26, 26, 46, 0.90)), 
                 url('../projects/architect office workspace/founder-bg.jpeg');
     background-size: cover;
     background-position: center;
