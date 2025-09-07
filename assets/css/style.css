@@ -444,32 +444,7 @@ ul, ol {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
-    margin-bottom: 4rem;
-}
-
-.hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-}
-
-.stat-item {
-    text-align: center;
-}
-
-.stat-number {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 700;
-    font-family: var(--font-heading);
-    margin-bottom: 0.5rem;
-}
-
-.stat-label {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.8);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
 }
 
 /* Scroll Indicator */
@@ -511,6 +486,9 @@ ul, ol {
 .about-section {
     padding: var(--section-padding);
     background: var(--light-gray);
+    position: relative;
+    z-index: 1;
+    clear: both;
 }
 
 .about-content {
@@ -518,7 +496,7 @@ ul, ol {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 
 .about-text h3 {
@@ -2088,7 +2066,6 @@ ul, ol {
 
 @media (max-width: 992px) {
     .hero-title { font-size: 3rem; }
-    .hero-stats { gap: 2rem; }
     
     .about-content {
         grid-template-columns: 1fr;
@@ -2168,10 +2145,6 @@ ul, ol {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-    }
-    .hero-stats {
-        flex-direction: column;
-        gap: 1.5rem;
     }
     
     /* Forms */
