@@ -1996,6 +1996,15 @@ ul, ol {
     font-weight: 600;
 }
 
+.credential-separator {
+    color: var(--text-light);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0.25rem;
+    display: flex;
+    align-items: center;
+}
+
 .founder-bio .lead-text {
     font-size: 1.125rem;
     font-weight: 500;
